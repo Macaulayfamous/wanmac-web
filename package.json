@@ -21,8 +21,8 @@
 		]
 	},
 	"dependencies": {
-		"@mantine/core": "^9.0.2",
-		"@mantine/hooks": "^9.0.2",
+		"@mantine/core": "^8.3.6",
+		"@mantine/hooks": "^8.3.6",
 		"@t3-oss/env-nextjs": "^0.12.0",
 		"lint-staged": "^16.4.0",
 		"next": "^15.2.3",
