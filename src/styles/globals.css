@@ -1,7 +1,30 @@
-@import "tailwindcss";
+@import "tailwind-preset-mantine";
+
+html {
+	scroll-behavior: smooth;
+}
 
 @theme {
-	--font-sans:
-		var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
-		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--font-plusJakartaSans: var(--font-plusJakartaSans);
+
+	--text-xs: 12px;
+	--text-sm: 14px;
+	--text-sm--line-height: 20px;
+	--text-base: 16px;
+	--text-base--line-height: 24px;
+	--text-lg: 18px;
+	--text-xl: 20px;
+	--text-xl--line-height: 28px;
+
+	--color-primary: #101828;
+	--color-dark1: #181a20;
+	--color-dark2: #5c5c5c;
+	--color-dark3: #898a8c;
+	--color-disabled: #d8d8d8;
+}
+
+@layer components {
+	.error {
+		@apply border border-red-500;
+	}
 }

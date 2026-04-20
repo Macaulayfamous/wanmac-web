@@ -8,16 +8,29 @@
 		"check": "biome check .",
 		"check:unsafe": "biome check --write --unsafe .",
 		"check:write": "biome check --write .",
-		"dev": "next dev --turbo",
+		"dev": "portless wanmac next dev --turbo",
 		"preview": "next build && next start",
 		"start": "next start",
-		"typecheck": "tsc --noEmit"
+		"typecheck": "tsc --noEmit",
+		"prepare": "husky",
+		"postbuild": "if [ \"$NODE_ENV\" = \"production\" ]; then next-sitemap; else echo 'Skipping sitemap in non-production'; fi"
+	},
+	"lint-staged": {
+		"**/*.{ts,tsx,js,jsx,json,jsonc,css}": [
+			"biome check --write --no-errors-on-unmatched"
+		]
 	},
 	"dependencies": {
+		"@mantine/core": "^9.0.2",
+		"@mantine/hooks": "^9.0.2",
 		"@t3-oss/env-nextjs": "^0.12.0",
+		"lint-staged": "^16.4.0",
 		"next": "^15.2.3",
+		"next-sitemap": "^4.2.3",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0",
+		"tailwind-merge": "^3.5.0",
+		"tailwind-preset-mantine": "^4.0.2",
 		"zod": "^3.24.2"
 	},
 	"devDependencies": {
@@ -26,7 +39,11 @@
 		"@types/node": "^20.14.10",
 		"@types/react": "^19.0.0",
 		"@types/react-dom": "^19.0.0",
-		"postcss": "^8.5.3",
+		"husky": "^9.1.7",
+		"portless": "^0.10.3",
+		"postcss": "^8.5.10",
+		"postcss-preset-mantine": "^1.18.0",
+		"postcss-simple-vars": "^7.0.1",
 		"tailwindcss": "^4.0.15",
 		"typescript": "^5.8.2"
 	},
