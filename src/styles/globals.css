@@ -1,11 +1,18 @@
 @import "tailwind-preset-mantine";
 
+:root {
+	--mantine-font-weight-regular: 400;
+	--mantine-font-weight-medium: 500;
+	--mantine-font-weight-bold: 700;
+}
+
 html {
 	scroll-behavior: smooth;
+	font-family: var(--font-satoshi);
 }
 
 @theme {
-	--font-plusJakartaSans: var(--font-plusJakartaSans);
+	--font-satoshi: var(--font-satoshi);
 
 	--text-xs: 12px;
 	--text-sm: 14px;

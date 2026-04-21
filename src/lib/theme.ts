@@ -1,8 +1,8 @@
 import { createTheme, type MantineThemeOverride } from "@mantine/core";
-// import { plusJakartaSans } from "./fonts";
+import { satoshi } from "./fonts";
 
 export const theme: MantineThemeOverride = createTheme({
-	// fontFamily: plusJakartaSans.style.fontFamily,
+	fontFamily: satoshi.style.fontFamily,
 	colors: {
 		primary: [
 			"#101828",
@@ -21,7 +21,7 @@ export const theme: MantineThemeOverride = createTheme({
 	primaryColor: "primary",
 	headings: {
 		fontWeight: "700",
-		// fontFamily: plusJakartaSans.style.fontFamily,
+		fontFamily: satoshi.style.fontFamily,
 		sizes: {
 			h1: {
 				fontSize: "48px",
