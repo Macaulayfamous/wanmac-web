@@ -79,7 +79,7 @@ const Navbar = () => {
 					<Burger
 						aria-label="Toggle navigation"
 						className="sm:hidden"
-						color="white"
+						color={isHomePage ? "white" : "#0E1628"}
 						lineSize={2}
 						onClick={toggle}
 						opened={opened}

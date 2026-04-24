@@ -49,26 +49,29 @@ const contactCards = [
 const ContactPageClient = () => {
 	return (
 		<div>
-			<Box className="bg-[#F5F8FF] pt-[41px] pb-[74px]" component="section">
+			<Box
+				className="bg-[#F5F8FF] py-14 md:pt-[41px] md:pb-[74px]"
+				component="section"
+			>
 				<PageWrapper>
-					<SimpleGrid className="grid-cols-2 gap-x-[152px]">
-						<Stack className="mt-[117px] max-w-[464px] gap-y-4">
-							<Text className="font-medium text-[#0E1628] text-[60px] leading-[66px]">
+					<SimpleGrid className="grid-cols-1 gap-10 md:grid-cols-2 md:gap-x-[152px]">
+						<Stack className="max-w-[464px] gap-y-4 md:mt-[117px]">
+							<Text className="font-medium text-[#0E1628] text-[40px] leading-[46px] md:text-[60px] md:leading-[66px]">
 								Contact us
 							</Text>
-							<Text className="font-normal text-[#414141] text-lg leading-[27px] -tracking-[0.16px]">
+							<Text className="font-normal text-[#414141] text-base leading-7 -tracking-[0.16px] md:text-lg md:leading-[27px]">
 								A reliable way to send, receive, and track deliveries in
 								real-time. Built for speed, designed for convenience.
 							</Text>
 						</Stack>
 
-						<Paper className="rounded-3xl border border-[#E7ECF3] bg-white px-6 py-8 shadow-[0px_4px_4px_0px_rgba(20,20,43,0.04),0px_1px_1px_0px_rgba(20,20,43,0.04)]">
+						<Paper className="rounded-3xl border border-[#E7ECF3] bg-white px-4 py-6 shadow-[0px_4px_4px_0px_rgba(20,20,43,0.04),0px_1px_1px_0px_rgba(20,20,43,0.04)] md:px-6 md:py-8">
 							<Stack className="gap-y-6">
 								<SimpleGrid className="grid-cols-1 gap-4 md:grid-cols-2">
 									<TextInput
 										classNames={{
 											input:
-												"h-[44px] rounded-[8px] border-[#D5DDE8] text-base text-[#0E1628]",
+												"h-[44px] rounded-[8px] border-[#D5DDE8] text-sm text-[#0E1628] md:text-base",
 											label:
 												"mb-2 font-medium text-base leading-6 text-[#344054]",
 										}}
@@ -90,7 +93,7 @@ const ContactPageClient = () => {
 								<TextInput
 									classNames={{
 										input:
-											"h-[44px] rounded-[8px] border-[#D5DDE8] text-base text-[#0E1628]",
+											"h-[44px] rounded-[8px] border-[#D5DDE8] text-sm text-[#0E1628] md:text-base",
 										label:
 											"mb-2 font-medium text-base leading-6 text-[#344054]",
 									}}
@@ -102,7 +105,7 @@ const ContactPageClient = () => {
 								<TextInput
 									classNames={{
 										input:
-											"h-[44px] rounded-[8px] border-[#D5DDE8] text-base text-[#0E1628]",
+											"h-[44px] rounded-[8px] border-[#D5DDE8] text-sm text-[#0E1628] md:text-base",
 										label:
 											"mb-2 font-medium text-base leading-6 text-[#344054]",
 									}}
@@ -114,7 +117,7 @@ const ContactPageClient = () => {
 								<Textarea
 									classNames={{
 										input:
-											"h-[134px] rounded-[8px] border-[#D5DDE8] px-4 py-3 text-base text-[#0E1628]",
+											"h-[134px] rounded-[8px] border-[#D5DDE8] px-4 py-3 text-sm text-[#0E1628] md:text-base",
 										label:
 											"mb-2 font-medium text-base leading-6 text-[#344054]",
 									}}
@@ -127,7 +130,8 @@ const ContactPageClient = () => {
 									classNames={{
 										body: "items-center",
 										input: "rounded-md border-[#D0D5DD]",
-										label: "text-base leading-7 text-[#667085]",
+										label:
+											"text-sm leading-6 text-[#667085] md:text-base md:leading-7",
 									}}
 									label={
 										<>
@@ -140,7 +144,7 @@ const ContactPageClient = () => {
 									}
 								/>
 
-								<Button className="mt-2 h-[60px] rounded-[999px] bg-[#3455FF] font-medium text-lg text-white leading-5">
+								<Button className="mt-2 h-14 rounded-[999px] bg-[#3455FF] font-medium text-base text-white leading-5 md:h-[60px] md:text-lg">
 									Send message
 								</Button>
 							</Stack>
