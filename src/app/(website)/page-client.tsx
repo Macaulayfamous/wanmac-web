@@ -158,10 +158,10 @@ const PageClient = () => {
 									move deliveries with speed, confidence, and full visibility.
 								</Text>
 							</SimpleGrid>
-							<SimpleGrid className="grid-cols-2 gap-8 md:grid-cols-4 md:gap-0">
+							<Flex className="flex-wrap justify-between gap-y-8 md:gap-y-0">
 								{stats.map((item, index) => (
 									<Box
-										className="min-w-[140px] text-white"
+										className="w-[47%] text-white md:w-auto"
 										key={`stats-${index}`}
 									>
 										<Text className="font-medium text-[44px] leading-[52px] md:text-[72px] md:leading-[80px]">
@@ -175,7 +175,7 @@ const PageClient = () => {
 										</Text>
 									</Box>
 								))}
-							</SimpleGrid>
+							</Flex>
 						</Stack>
 					</Paper>
 				</PageWrapper>
