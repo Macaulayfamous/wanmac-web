@@ -1,22 +1,22 @@
 export const stats = [
 	{
-		value: 99,
+		value: 98,
 		unit: "%",
-		text: "Delivery on time",
+		text: "On-time deliveries",
 	},
 	{
-		value: 99,
-		unit: "%",
-		text: "Delivery on time",
+		value: 15,
+		unit: "k+",
+		text: "Packages delivered",
 	},
 	{
-		value: 99,
-		unit: "%",
-		text: "Delivery on time",
+		value: 4.9,
+		unit: "/5",
+		text: "Customer rating",
 	},
 	{
-		value: 99,
-		unit: "%",
-		text: "Delivery on time",
+		value: 24,
+		unit: "/7",
+		text: "Live support access",
 	},
 ];

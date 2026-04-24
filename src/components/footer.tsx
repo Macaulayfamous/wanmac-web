@@ -41,13 +41,17 @@ export const footerLinks = [
 
 const Footer = () => {
 	return (
-		<Box className="px-10 pb-[41px]" component="footer">
+		<Box className="px-4 pb-10 md:px-10 md:pb-[41px]" component="footer">
 			<PageWrapper>
-				<Stack className="gap-y-[50px]">
-					<Stack className="gap-y-[30px] pr-[65px] pb-[69px]">
-						<Group className="justify-between">
-							<Image alt="wanmac logo" src={logo} />
-							<Group className="gap-x-[75px]">
+				<Stack className="gap-y-8 md:gap-y-[50px]">
+					<Stack className="gap-y-8 pb-10 md:gap-y-[30px] md:pr-[65px] md:pb-[69px]">
+						<Group className="flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
+							<Image
+								alt="wanmac logo"
+								className="h-auto w-[132px] md:w-auto"
+								src={logo}
+							/>
+							<Group className="gap-4 md:gap-x-[75px]">
 								{footerLinks.map((item, index) => (
 									<Link href={item.href} key={`footer-link-${index}`}>
 										<Text className="font-normal text-[#232323] text-lg leading-[23px]">
@@ -58,7 +62,7 @@ const Footer = () => {
 							</Group>
 						</Group>
 
-						<Group className="gap-x-6">
+						<Group className="gap-4">
 							<Link href={routes.appStore}>
 								<Group className="h-10 w-[135px] gap-x-1.5 rounded-[7px] border border-[#A6A6A6] bg-[#101010] pl-[9px] shadow-[0_1px_2px_rgba(0,0,0,0.2)]">
 									<AppleLogo />
@@ -85,9 +89,9 @@ const Footer = () => {
 						</Group>
 					</Stack>
 
-					<Group className="justify-between">
+					<Group className="flex-col-reverse items-start gap-6 md:flex-row md:items-center md:justify-between">
 						<Group>
-							<Text className="font-normal text-[#636362] text-lg leading-[27px] -tracking-[0.16px]">
+							<Text className="font-normal text-[#636362] text-base leading-7 -tracking-[0.16px] md:text-lg md:leading-[27px]">
 								Copyright © Wanmac |{" "}
 								<Link href={routes.privacy}>
 									Privacy Policy - Terms & condidtions
@@ -95,7 +99,7 @@ const Footer = () => {
 							</Text>
 						</Group>
 
-						<Group>
+						<Group className="gap-4">
 							{socialLinks.map((item, index) => (
 								<Link href={item.href} key={`social-link-${index}`}>
 									<item.icon />
