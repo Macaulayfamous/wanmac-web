@@ -4,7 +4,10 @@ import { Box, Burger, Button, Drawer, Group, Stack } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import logo from "@/public/logo.svg";
 import transparentLogo from "@/public/logo-transparent.svg";
+import { cn } from "@/utils";
 import { routes } from "@/utils/routes";
 import PageWrapper from "./page-wrapper";
 
@@ -25,21 +28,32 @@ const navlinks = [
 
 const Navbar = () => {
 	const [opened, { close, toggle }] = useDisclosure(false);
+	const pathname = usePathname();
+	const isHomePage = pathname === routes.home;
 
 	return (
 		<>
-			<Box className="flex h-[104px] items-center bg-[#142FBB]" component="nav">
+			<Box
+				className={cn("flex h-[104px] items-center bg-[#F5F8FF]", {
+					"bg-[#142FBB]": isHomePage,
+				})}
+				component="nav"
+			>
 				<PageWrapper className="flex items-center justify-between">
 					<Link href="/">
 						<Image
 							alt="wanmac logo"
 							className="h-auto w-[128px] md:w-auto"
-							src={transparentLogo}
+							src={isHomePage ? transparentLogo : logo}
 						/>
 					</Link>
-
 					<Group
-						className="gap-x-9 font-normal text-lg text-white leading-[30px]"
+						className={cn(
+							"gap-x-9 font-normal text-[#0E1628] text-lg leading-[30px]",
+							{
+								"text-white": isHomePage,
+							},
+						)}
 						visibleFrom="sm"
 					>
 						{navlinks.map((link) => (
@@ -50,7 +64,14 @@ const Navbar = () => {
 					</Group>
 
 					<Link className="hidden sm:block" href="">
-						<Button className="h-14 w-[170px] rounded-[96px] bg-white font-medium text-[#3455FF] text-base leading-[18px]">
+						<Button
+							className={cn(
+								"h-14 w-[170px] rounded-[96px] bg-[#3455FF] font-medium text-base text-white leading-[18px]",
+								{
+									"bg-white text-[#3455FF]": isHomePage,
+								},
+							)}
+						>
 							Download app
 						</Button>
 					</Link>
