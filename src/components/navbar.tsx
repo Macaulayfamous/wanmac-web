@@ -5,20 +5,21 @@ import { useDisclosure } from "@mantine/hooks";
 import Image from "next/image";
 import Link from "next/link";
 import transparentLogo from "@/public/logo-transparent.svg";
+import { routes } from "@/utils/routes";
 import PageWrapper from "./page-wrapper";
 
 const navlinks = [
 	{
 		name: "Home",
-		href: "/",
+		href: routes.home,
 	},
 	{
 		name: "Contact",
-		href: "/contact",
+		href: routes.contact,
 	},
 	{
 		name: "FAQ",
-		href: "/",
+		href: routes.faq,
 	},
 ];
 

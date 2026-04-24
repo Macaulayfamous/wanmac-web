@@ -239,7 +239,11 @@ const PageClient = () => {
 				</PageWrapper>
 			</Box>
 
-			<Box className="pb-16 md:pb-[96px]" component="section">
+			<Box
+				className="scroll-mt-20 pb-16 md:pb-[96px]"
+				component="section"
+				id="faq"
+			>
 				<PageWrapper>
 					<SimpleGrid className="grid-cols-1 gap-10 md:grid-cols-2 md:gap-x-16">
 						<Stack className="gap-y-10">
