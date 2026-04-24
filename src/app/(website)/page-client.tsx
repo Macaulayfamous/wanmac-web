@@ -158,7 +158,7 @@ const PageClient = () => {
 									move deliveries with speed, confidence, and full visibility.
 								</Text>
 							</SimpleGrid>
-							<Group className="gap-8 md:justify-between">
+							<SimpleGrid className="grid-cols-2 gap-8 md:grid-cols-4 md:gap-0">
 								{stats.map((item, index) => (
 									<Box
 										className="min-w-[140px] text-white"
@@ -175,7 +175,7 @@ const PageClient = () => {
 										</Text>
 									</Box>
 								))}
-							</Group>
+							</SimpleGrid>
 						</Stack>
 					</Paper>
 				</PageWrapper>
