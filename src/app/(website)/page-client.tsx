@@ -229,6 +229,13 @@ const PageClient = () => {
 					<SimpleGrid className="grid-cols-2 gap-x-16">
 						<Stack className="gap-y-10">
 							<Stack className="gap-y-[18px]">
+								<Group className="gap-x-3">
+									<Box className="h-px w-10 bg-[linear-gradient(269.98deg,#96784D_0%,rgba(150,120,77,0)_100%)]" />
+									<Text className="font-normal text-[#636362] text-lg leading-[27px] -tracking-[0.16px]">
+										FAQ&apos;s
+									</Text>
+									<Box className="h-px w-10 bg-[linear-gradient(269.98deg,#96784D_0%,rgba(150,120,77,0)_100%)]" />
+								</Group>
 								<Title className="font-medium text-[#232323] text-[56px] leading-[62px] -tracking-[0.16px]">
 									Frequently asked questions
 								</Title>
