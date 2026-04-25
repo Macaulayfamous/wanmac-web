@@ -70,8 +70,8 @@ html {
 }
 
 .phone-input-container .form-control:focus {
-	border-color: #3455ff !important;
-	box-shadow: 0 0 0 1px #3455ff !important;
+	border-color: #d5dde8 !important;
+	box-shadow: none !important;
 }
 
 .phone-input-container .flag-dropdown {
@@ -87,6 +87,17 @@ html {
 
 .phone-input-container .country-list {
 	border-radius: 8px !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+	-webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+	-webkit-text-fill-color: #0e1628 !important;
+	caret-color: #0e1628 !important;
 }
 
 @media (min-width: 48em) {

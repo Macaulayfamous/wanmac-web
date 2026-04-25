@@ -205,7 +205,7 @@ const ContactPageClient = () => {
 										<TextInput
 											classNames={{
 												input:
-													"h-[44px] rounded-[8px] border-[#D5DDE8] text-sm text-[#0E1628] md:text-base",
+													"h-[44px] rounded-[8px] border-[#D5DDE8] bg-white text-sm text-[#0E1628] md:text-base",
 												label:
 													"mb-2 font-medium text-base leading-6 text-[#344054]",
 											}}
@@ -220,7 +220,7 @@ const ContactPageClient = () => {
 										<TextInput
 											classNames={{
 												input:
-													"h-[44px] rounded-[8px] border-[#D5DDE8] text-sm text-[#0E1628] md:text-base",
+													"h-[44px] rounded-[8px] border-[#D5DDE8] bg-white text-sm text-[#0E1628] md:text-base",
 												label:
 													"mb-2 font-medium text-base leading-6 text-[#344054]",
 											}}
@@ -237,7 +237,7 @@ const ContactPageClient = () => {
 									<TextInput
 										classNames={{
 											input:
-												"h-[44px] rounded-[8px] border-[#D5DDE8] text-sm text-[#0E1628] md:text-base",
+												"h-[44px] rounded-[8px] border-[#D5DDE8] bg-white text-sm text-[#0E1628] md:text-base",
 											label:
 												"mb-2 font-medium text-base leading-6 text-[#344054]",
 										}}
@@ -275,7 +275,7 @@ const ContactPageClient = () => {
 									<Textarea
 										classNames={{
 											input:
-												"h-[134px] rounded-[8px] border-[#D5DDE8] px-4 py-3 text-sm text-[#0E1628] md:text-base",
+												"h-[134px] rounded-[8px] border-[#D5DDE8] bg-white px-4 py-3 text-sm text-[#0E1628] md:text-base",
 											label:
 												"mb-2 font-medium text-base leading-6 text-[#344054]",
 										}}
