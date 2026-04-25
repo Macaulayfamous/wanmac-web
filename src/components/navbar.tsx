@@ -84,7 +84,7 @@ const Navbar = () => {
 							initial={reduceMotion ? undefined : "initial"}
 							variants={fadeDown}
 						>
-							<Link className="hidden sm:block" href="">
+							<Link className="hidden sm:block" href={routes.appStore}>
 								<Button
 									className={cn(
 										"h-14 w-[170px] rounded-[96px] bg-[#3455FF] font-medium text-base text-white leading-[18px]",
@@ -100,6 +100,7 @@ const Navbar = () => {
 
 						<motion.div
 							animate={reduceMotion ? undefined : "animate"}
+							className="sm:hidden"
 							initial={reduceMotion ? undefined : "initial"}
 							variants={fadeDown}
 						>

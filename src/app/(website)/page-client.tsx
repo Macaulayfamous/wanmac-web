@@ -337,7 +337,6 @@ const PageClient = () => {
 													>
 														{!isLast ? (
 															<motion.div
-																className="absolute top-[74px] left-5 h-[calc(100%-34px)] w-px origin-top bg-[#D9E2FF]"
 																initial={
 																	reduceMotion ? undefined : { scaleY: 0 }
 																}
@@ -583,10 +582,10 @@ const PageClient = () => {
 							<SimpleGrid className="grid-cols-1 gap-6 md:grid-cols-2 md:gap-x-7">
 								<motion.div
 									variants={fadeUp}
-									{...(reduceMotion ? {} : cardHover)}
+									// {...(reduceMotion ? {} : cardHover)}
 								>
 									<Paper
-										className="bg-[#F5F4F3] px-6 py-10 md:pt-5 md:pr-7 md:pb-16 md:pl-[54px]"
+										className="h-full bg-[#F5F4F3] px-6 py-10 md:pt-5 md:pr-7 md:pb-16 md:pl-[54px]"
 										radius={24}
 									>
 										<Stack className="gap-y-[14px]">
@@ -616,7 +615,7 @@ const PageClient = () => {
 
 								<motion.div
 									variants={fadeUp}
-									{...(reduceMotion ? {} : cardHover)}
+									// {...(reduceMotion ? {} : cardHover)}
 								>
 									<Paper
 										className="bg-[#0E1628] px-6 py-10 md:px-[38px] md:py-[72px]"

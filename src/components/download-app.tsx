@@ -112,34 +112,6 @@ const DownloadApp = () => {
 						</motion.div>
 
 						<motion.div
-							animate={
-								reduceMotion
-									? undefined
-									: {
-											y: [0, -6, 0],
-											scale: [1, 1.01, 1],
-										}
-							}
-							initial={
-								reduceMotion ? undefined : { opacity: 0, y: 24, scale: 0.98 }
-							}
-							transition={
-								reduceMotion
-									? undefined
-									: {
-											opacity: { duration: 0.6, ease: easeOutExpo },
-											y: {
-												duration: 5.2,
-												repeat: Number.POSITIVE_INFINITY,
-												ease: "easeInOut",
-											},
-											scale: {
-												duration: 5.2,
-												repeat: Number.POSITIVE_INFINITY,
-												ease: "easeInOut",
-											},
-										}
-							}
 							whileInView={
 								reduceMotion ? undefined : { opacity: 1, y: 0, scale: 1 }
 							}
