@@ -22,6 +22,7 @@ import ChatIcon from "@/components/icons/chat-icon";
 import SalesIcon from "@/components/icons/sales-icon";
 import SupportIcon from "@/components/icons/support-icon";
 import PageWrapper from "@/components/page-wrapper";
+import { env } from "@/env";
 import { routes } from "@/utils/routes";
 
 const contactCards = [
@@ -130,9 +131,9 @@ const ContactPageClient = () => {
 			return;
 		}
 
-		const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-		const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-		const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+		const serviceId = env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+		const templateId = env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+		const publicKey = env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
 		if (!serviceId || !templateId || !publicKey) {
 			setSubmitState({
@@ -183,7 +184,7 @@ const ContactPageClient = () => {
 		<div>
 			<Box
 				className="bg-[#F5F8FF] py-14 md:pt-[41px] md:pb-[74px]"
-				component="section"
+				component="header"
 			>
 				<PageWrapper>
 					<SimpleGrid className="grid-cols-1 gap-10 md:grid-cols-2 md:gap-x-[152px]">
@@ -343,7 +344,7 @@ const ContactPageClient = () => {
 					</SimpleGrid>
 				</PageWrapper>
 			</Box>
-			<Box className="py-16 md:py-24" component="section">
+			<Box className="bg-white py-16 md:py-24" component="section">
 				<PageWrapper>
 					<Stack className="gap-y-10">
 						<Stack className="text-center" gap={1}>
@@ -391,7 +392,7 @@ const ContactPageClient = () => {
 					</Stack>
 				</PageWrapper>
 			</Box>
-			<Box className="mb-[70px]" component="section">
+			<Box className="bg-white pb-[70px]" component="section">
 				<PageWrapper>
 					<DownloadApp />
 				</PageWrapper>

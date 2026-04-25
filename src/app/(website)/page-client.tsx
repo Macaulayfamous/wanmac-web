@@ -138,7 +138,7 @@ const PageClient = () => {
 				</Box>
 
 				<motion.section
-					className="pt-20 pb-12 md:pt-[158px] md:pb-[62px]"
+					className="bg-white pt-20 pb-12 md:pt-[158px] md:pb-[62px]"
 					initial={reduceMotion ? undefined : "initial"}
 					transition={{ duration: 0.6, ease: easeOutExpo }}
 					variants={fadeUp}
@@ -185,7 +185,7 @@ const PageClient = () => {
 				</motion.section>
 
 				<motion.section
-					className="py-24"
+					className="bg-white py-24"
 					initial={reduceMotion ? undefined : "initial"}
 					transition={{ duration: 0.6, ease: easeOutExpo }}
 					variants={scaleIn}
@@ -254,7 +254,7 @@ const PageClient = () => {
 				</motion.section>
 
 				<motion.section
-					className="pb-16 md:pb-24"
+					className="bg-white pb-16 md:pb-24"
 					initial={reduceMotion ? undefined : "initial"}
 					transition={{ duration: 0.6, ease: easeOutExpo }}
 					variants={fadeUp}
@@ -414,7 +414,7 @@ const PageClient = () => {
 				</motion.section>
 
 				<motion.section
-					className="scroll-mt-20 pb-16 md:pb-[96px]"
+					className="scroll-mt-20 bg-white pb-16 md:pb-[96px]"
 					id="faq"
 					initial={reduceMotion ? undefined : "initial"}
 					transition={{ duration: 0.6, ease: easeOutExpo }}
@@ -521,7 +521,7 @@ const PageClient = () => {
 				</motion.section>
 
 				<motion.section
-					className="pb-16 md:pb-[82px]"
+					className="bg-white pb-16 md:pb-[82px]"
 					initial={reduceMotion ? undefined : "initial"}
 					transition={{ duration: 0.6, ease: easeOutExpo }}
 					variants={fadeUp}
@@ -597,7 +597,7 @@ const PageClient = () => {
 					</PageWrapper>
 				</motion.section>
 
-				<Box className="pb-20 md:pb-[150px]" component="section">
+				<Box className="bg-white pb-20 md:pb-[150px]" component="section">
 					<PageWrapper>
 						<DownloadApp />
 					</PageWrapper>

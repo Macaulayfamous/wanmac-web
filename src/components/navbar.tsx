@@ -33,19 +33,45 @@ const navlinks = [
 	},
 ];
 
+const navbarThemes: Record<
+	string,
+	{
+		backgroundClassName: string;
+		logo: "dark" | "light";
+		textClassName: string;
+	}
+> = {
+	[routes.home]: {
+		backgroundClassName: "bg-[#142FBB]",
+		logo: "light",
+		textClassName: "text-white",
+	},
+	[routes.contact]: {
+		backgroundClassName: "bg-[#F5F8FF]",
+		logo: "dark",
+		textClassName: "text-[#0E1628]",
+	},
+};
+
 const Navbar = () => {
 	const [opened, { close, toggle }] = useDisclosure(false);
 	const pathname = usePathname();
-	const isHomePage = pathname === routes.home;
 	const reduceMotion = useReducedMotion();
+	const navbarTheme = navbarThemes[pathname] ?? {
+		backgroundClassName: "bg-white",
+		logo: "dark" as const,
+		textClassName: "text-[#0E1628]",
+	};
+	const isLightLogo = navbarTheme.logo === "light";
 
 	return (
 		<LazyMotion features={domAnimation}>
 			<>
 				<Box
-					className={cn("flex h-[104px] items-center bg-[#F5F8FF]", {
-						"bg-[#142FBB]": isHomePage,
-					})}
+					className={cn(
+						"flex h-[104px] items-center",
+						navbarTheme.backgroundClassName,
+					)}
 					component="nav"
 				>
 					<PageWrapper className="flex items-center justify-between">
@@ -58,16 +84,14 @@ const Navbar = () => {
 								<Image
 									alt="wanmac logo"
 									className="h-auto w-[128px] md:w-auto"
-									src={isHomePage ? transparentLogo : logo}
+									src={isLightLogo ? transparentLogo : logo}
 								/>
 							</Link>
 						</motion.div>
 						<Group
 							className={cn(
-								"gap-x-9 font-normal text-[#0E1628] text-lg leading-[30px]",
-								{
-									"text-white": isHomePage,
-								},
+								"gap-x-9 font-normal text-lg leading-[30px]",
+								navbarTheme.textClassName,
 							)}
 							visibleFrom="sm"
 						>
@@ -88,9 +112,7 @@ const Navbar = () => {
 								<Button
 									className={cn(
 										"h-14 w-[170px] rounded-[96px] bg-[#3455FF] font-medium text-base text-white leading-[18px]",
-										{
-											"bg-white text-[#3455FF]": isHomePage,
-										},
+										isLightLogo && "bg-white text-[#3455FF]",
 									)}
 								>
 									Download app
@@ -99,9 +121,7 @@ const Navbar = () => {
 							<Button
 								className={cn(
 									"hidden h-14 w-[170px] rounded-[96px] bg-[#3455FF] font-medium text-base text-white leading-[18px] opacity-90 sm:block",
-									{
-										"bg-white text-[#3455FF]": isHomePage,
-									},
+									isLightLogo && "bg-white text-[#3455FF]",
 								)}
 								disabled
 							>
@@ -118,7 +138,7 @@ const Navbar = () => {
 							<Burger
 								aria-label="Toggle navigation"
 								className="sm:hidden"
-								color={isHomePage ? "white" : "#0E1628"}
+								color={isLightLogo ? "white" : "#0E1628"}
 								lineSize={2}
 								onClick={toggle}
 								opened={opened}
