@@ -28,7 +28,6 @@ import VehicleApproved from "@/components/icons/vehicle-approved";
 import PageWrapper from "@/components/page-wrapper";
 import {
 	buttonMotion,
-	cardHover,
 	easeOutExpo,
 	fadeUp,
 	scaleIn,
@@ -39,63 +38,10 @@ import {
 } from "@/lib/motion";
 import analytics from "@/public/analytics.png";
 import deliveryMan from "@/public/delivery-man.png";
-import getMatchedImg from "@/public/get-matched.svg";
 import hero from "@/public/hero.png";
 import mockup from "@/public/mockup.png";
-import requestDeliveryImg from "@/public/Order Product Icon - Maptech X Webflow Template.svg";
-import recordTimeImg from "@/public/record-time.svg";
 import { routes } from "@/utils/routes";
-import { stats } from "./extras";
-
-const faqs = [
-	{
-		question: "How long does delivery take?",
-		answer:
-			"Most local deliveries arrive the same day, depending on distance, traffic, and rider availability.",
-	},
-	{
-		question: "Can I track my package?",
-		answer: "Yes. The app shows live tracking from pickup to final drop-off.",
-	},
-	{
-		question: "How do I pay?",
-		answer:
-			"You can pay securely in the app using the payment options shown at checkout.",
-	},
-	{
-		question: "Who are the riders?",
-		answer:
-			"Our riders are verified delivery partners trained to handle packages safely and on time.",
-	},
-	{
-		question: "What if there’s an issue with my delivery?",
-		answer:
-			"Contact support in the app or through our contact page and we’ll help resolve it quickly.",
-	},
-];
-
-const howItWorksSteps = [
-	{
-		id: "request",
-		icon: requestDeliveryImg,
-		title: "1. Request a Delivery",
-		description: "Enter pickup and drop-off details in seconds.",
-	},
-	{
-		id: "matched",
-		icon: getMatchedImg,
-		title: "2. Get Matched Instantly",
-		description:
-			"We assign an available rider as soon as your order is confirmed.",
-	},
-	{
-		id: "receive",
-		icon: recordTimeImg,
-		title: "3. Receive it in record time",
-		description:
-			"Track your package live and receive it at the selected destination.",
-	},
-];
+import { faqs, howItWorksSteps, stats } from "./extras";
 
 const PageClient = () => {
 	const [activeStep, setActiveStep] = useState(howItWorksSteps[0]?.id);
@@ -105,7 +51,10 @@ const PageClient = () => {
 	return (
 		<LazyMotion features={domAnimation}>
 			<Box component="main">
-				<Box className="bg-[#142FBB] pt-14 md:pt-[91px]" component="header">
+				<Box
+					className="min-h-[calc(100vh-104px)] bg-[#142FBB] pt-14 md:pt-[91px]"
+					component="header"
+				>
 					<PageWrapper>
 						<SimpleGrid className="grid-cols-1 items-center gap-10 md:grid-cols-2">
 							<motion.div
