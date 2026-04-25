@@ -1,7 +1,107 @@
-@import "tailwindcss";
+@import "tailwind-preset-mantine";
+@import "react-phone-input-2/lib/style.css";
+
+html {
+	scroll-behavior: smooth;
+	font-family: var(--font-satoshi);
+}
 
 @theme {
-	--font-sans:
-		var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
-		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--font-satoshi: var(--font-satoshi);
+
+	--text-xs: 12px;
+	--text-xs--line-height: 16px;
+	--text-sm: 14px;
+	--text-sm--line-height: 20px;
+	--text-base: 16px;
+	--text-base--line-height: 24px;
+	--text-lg: 18px;
+	--text-lg--line-height: 28px;
+	--text-xl: 20px;
+	--text-xl--line-height: 28px;
+	--text-2xl: 24px;
+	--text-2xl--line-height: 32px;
+	--text-3xl: 30px;
+	--text-3xl--line-height: 36px;
+	--text-4xl: 36px;
+	--text-4xl--line-height: 40px;
+	--text-5xl: 48px;
+	--text-5xl--line-height: 1;
+	--text-6xl: 60px;
+	--text-6xl--line-height: 1;
+	--text-7xl: 72px;
+	--text-7xl--line-height: 1;
+	--font-weight-thin: 100;
+	--font-weight-extralight: 200;
+	--font-weight-light: 300;
+	--font-weight-normal: 400;
+	--font-weight-medium: 500;
+	--font-weight-semibold: 600;
+	--font-weight-bold: 700;
+	--font-weight-extrabold: 800;
+	--font-weight-black: 900;
+
+	--color-primary: #101828;
+	--color-dark1: #181a20;
+	--color-dark2: #5c5c5c;
+	--color-dark3: #898a8c;
+	--color-disabled: #d8d8d8;
+}
+
+@layer components {
+	.error {
+		@apply border border-red-500;
+	}
+}
+
+.phone-input-container {
+	width: 100%;
+}
+
+.phone-input-container .form-control {
+	width: 100% !important;
+	height: 44px !important;
+	border: 1px solid #d5dde8 !important;
+	border-radius: 8px !important;
+	padding-left: 52px !important;
+	font-size: 14px !important;
+	color: #0e1628 !important;
+	box-shadow: none !important;
+}
+
+.phone-input-container .form-control:focus {
+	border-color: #d5dde8 !important;
+	box-shadow: none !important;
+}
+
+.phone-input-container .flag-dropdown {
+	border: 1px solid #d5dde8 !important;
+	border-right: 0 !important;
+	border-radius: 8px 0 0 8px !important;
+	background: white !important;
+}
+
+.phone-input-container .selected-flag {
+	border-radius: 8px 0 0 8px !important;
+}
+
+.phone-input-container .country-list {
+	border-radius: 8px !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+	-webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+	-webkit-text-fill-color: #0e1628 !important;
+	caret-color: #0e1628 !important;
+}
+
+@media (min-width: 48em) {
+	.phone-input-container .form-control {
+		font-size: 16px !important;
+	}
 }

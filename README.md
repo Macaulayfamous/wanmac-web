@@ -1,29 +1,51 @@
-# Create T3 App
+# Wanmac Web
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+A modern web application built with [Next.js](https://nextjs.org), featuring a robust UI system with [Mantine](https://mantine.dev) and [Tailwind CSS](https://tailwindcss.com).
 
-## What's next? How do I make an app with this?
+## 🚀 Tech Stack
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+- **Framework:** [Next.js 15](https://nextjs.org) (App Router)
+- **Styling & UI:** 
+  - [Tailwind CSS 4](https://tailwindcss.com)
+  - [Mantine core & hooks](https://mantine.dev)
+  - [Lucide React](https://lucide.dev) for icons
+- **Animations:** [Motion](https://motion.dev/)
+- **Formatting & Linting:** [Biome](https://biomejs.dev)
+- **Pre-commit Hooks:** [Husky](https://typicode.github.io/husky/) & [lint-staged](https://github.com/lint-staged/lint-staged)
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## 🏃‍♂️ Getting Started
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+### Prerequisites
 
-## Learn More
+Ensure you have your preferred package manager (npm, yarn, pnpm, or bun) installed. The project currently uses `bun` based on lockfile presence.
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+### Installation
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+1. Clone the repository and install dependencies:
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+```bash
+bun install
+```
 
-## How do I deploy this?
+2. Start the development server:
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+```bash
+bun run dev
+```
+
+The application will be running with `portless` via Turbo.
+
+## 📜 Scripts
+
+- `bun run dev`: Start standard development server
+- `bun run build`: Build for production
+- `bun run start`: Start production server
+- `bun run preview`: Build and start for previewing
+- `bun run check`: Run Biome linter and formatter
+- `bun run check:write`: Write fixes for lint/formatting issues
+- `bun run typecheck`: Check TypeScript typings
+
+## 🛠️ Code Quality
+
+This project uses [Biome](https://biomejs.dev) over ESLint and Prettier for fast, unified linting and formatting. 
+Hooks are set up via Husky and lint-staged to ensure code adheres to the defined standards before committing.
