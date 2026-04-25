@@ -152,12 +152,18 @@ const ContactPageClient = () => {
 				templateId,
 				{
 					email: values.email,
+					email_address: values.email,
 					first_name: values.firstName,
+					from_email: values.email,
+					from_name: `${values.firstName} ${values.lastName}`.trim(),
 					full_name: `${values.firstName} ${values.lastName}`.trim(),
 					last_name: values.lastName,
 					message: values.message,
 					phone: `+${values.phoneNumber}`,
+					phone_number: `+${values.phoneNumber}`,
+					reply_to: values.email,
 					title: "Wanmac Contact Form",
+					to_name: "Wanmac",
 				},
 				{ publicKey },
 			);
