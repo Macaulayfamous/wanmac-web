@@ -1,6 +1,8 @@
 "use client";
 
+import emailjs from "@emailjs/browser";
 import {
+	Alert,
 	Box,
 	Button,
 	Checkbox,
@@ -11,7 +13,10 @@ import {
 	Textarea,
 	TextInput,
 } from "@mantine/core";
+import { AlertCircle, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
+import PhoneInput from "react-phone-input-2";
 import DownloadApp from "@/components/download-app";
 import ChatIcon from "@/components/icons/chat-icon";
 import SalesIcon from "@/components/icons/sales-icon";
@@ -46,7 +51,134 @@ const contactCards = [
 	},
 ];
 
+type FormValues = {
+	agreeToPrivacy: boolean;
+	email: string;
+	firstName: string;
+	lastName: string;
+	message: string;
+	phoneNumber: string;
+};
+
+type FormErrors = Partial<Record<keyof FormValues, string>>;
+
+const initialValues: FormValues = {
+	agreeToPrivacy: false,
+	email: "",
+	firstName: "",
+	lastName: "",
+	message: "",
+	phoneNumber: "",
+};
+
 const ContactPageClient = () => {
+	const [values, setValues] = useState<FormValues>(initialValues);
+	const [errors, setErrors] = useState<FormErrors>({});
+	const [isSubmitting, setIsSubmitting] = useState(false);
+	const [submitState, setSubmitState] = useState<{
+		message: string;
+		type: "error" | "success";
+	} | null>(null);
+
+	const setFieldValue = <K extends keyof FormValues>(
+		field: K,
+		value: FormValues[K],
+	) => {
+		setValues((current) => ({ ...current, [field]: value }));
+		setErrors((current) => ({ ...current, [field]: undefined }));
+	};
+
+	const validateForm = () => {
+		const nextErrors: FormErrors = {};
+
+		if (!values.firstName.trim()) {
+			nextErrors.firstName = "First name is required";
+		}
+
+		if (!values.lastName.trim()) {
+			nextErrors.lastName = "Last name is required";
+		}
+
+		if (!values.email.trim()) {
+			nextErrors.email = "Email is required";
+		} else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
+			nextErrors.email = "Enter a valid email address";
+		}
+
+		if (!values.phoneNumber.trim()) {
+			nextErrors.phoneNumber = "Phone number is required";
+		}
+
+		if (!values.message.trim()) {
+			nextErrors.message = "Message is required";
+		}
+
+		if (!values.agreeToPrivacy) {
+			nextErrors.agreeToPrivacy = "You must agree to the privacy policy";
+		}
+
+		setErrors(nextErrors);
+
+		return Object.keys(nextErrors).length === 0;
+	};
+
+	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+		event.preventDefault();
+		setSubmitState(null);
+
+		if (!validateForm()) {
+			return;
+		}
+
+		const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+		const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+		const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+		if (!serviceId || !templateId || !publicKey) {
+			setSubmitState({
+				message:
+					"Email service is not configured yet. Add the EmailJS public environment variables to enable submissions.",
+				type: "error",
+			});
+			return;
+		}
+
+		try {
+			setIsSubmitting(true);
+
+			await emailjs.send(
+				serviceId,
+				templateId,
+				{
+					email: values.email,
+					first_name: values.firstName,
+					full_name: `${values.firstName} ${values.lastName}`.trim(),
+					last_name: values.lastName,
+					message: values.message,
+					phone: `+${values.phoneNumber}`,
+					title: "Wanmac Contact Form",
+				},
+				{ publicKey },
+			);
+
+			setSubmitState({
+				message:
+					"Your message has been sent successfully. We’ll get back to you soon.",
+				type: "success",
+			});
+			setValues(initialValues);
+			setErrors({});
+		} catch {
+			setSubmitState({
+				message:
+					"We couldn’t send your message right now. Please try again shortly.",
+				type: "error",
+			});
+		} finally {
+			setIsSubmitting(false);
+		}
+	};
+
 	return (
 		<div>
 			<Box
@@ -66,8 +198,41 @@ const ContactPageClient = () => {
 						</Stack>
 
 						<Paper className="rounded-3xl border border-[#E7ECF3] bg-white px-4 py-6 shadow-[0px_4px_4px_0px_rgba(20,20,43,0.04),0px_1px_1px_0px_rgba(20,20,43,0.04)] md:px-6 md:py-8">
-							<Stack className="gap-y-6">
-								<SimpleGrid className="grid-cols-1 gap-4 md:grid-cols-2">
+							<Box component="form" onSubmit={handleSubmit}>
+								<Stack className="gap-y-6">
+									<SimpleGrid className="grid-cols-1 gap-4 md:grid-cols-2">
+										<TextInput
+											classNames={{
+												input:
+													"h-[44px] rounded-[8px] border-[#D5DDE8] text-sm text-[#0E1628] md:text-base",
+												label:
+													"mb-2 font-medium text-base leading-6 text-[#344054]",
+											}}
+											error={errors.firstName}
+											label="First name"
+											onChange={(event) =>
+												setFieldValue("firstName", event.currentTarget.value)
+											}
+											placeholder="First name"
+											value={values.firstName}
+										/>
+										<TextInput
+											classNames={{
+												input:
+													"h-[44px] rounded-[8px] border-[#D5DDE8] text-sm text-[#0E1628] md:text-base",
+												label:
+													"mb-2 font-medium text-base leading-6 text-[#344054]",
+											}}
+											error={errors.lastName}
+											label="Last name"
+											onChange={(event) =>
+												setFieldValue("lastName", event.currentTarget.value)
+											}
+											placeholder="Last name"
+											value={values.lastName}
+										/>
+									</SimpleGrid>
+
 									<TextInput
 										classNames={{
 											input:
@@ -75,79 +240,105 @@ const ContactPageClient = () => {
 											label:
 												"mb-2 font-medium text-base leading-6 text-[#344054]",
 										}}
-										label="First name"
-										placeholder="First name"
+										error={errors.email}
+										label="Email"
+										onChange={(event) =>
+											setFieldValue("email", event.currentTarget.value)
+										}
+										placeholder="you@company.com"
+										type="email"
+										value={values.email}
 									/>
-									<TextInput
+
+									<Stack gap={8}>
+										<Text className="font-medium text-[#344054] text-base leading-6">
+											Phone number
+										</Text>
+										<PhoneInput
+											buttonClass={errors.phoneNumber ? "!border-red-500" : ""}
+											containerClass="phone-input-container"
+											country="ng"
+											enableSearch
+											inputClass={errors.phoneNumber ? "!border-red-500" : ""}
+											onChange={(value) => setFieldValue("phoneNumber", value)}
+											placeholder="+234 814 910 6125"
+											value={values.phoneNumber}
+										/>
+										{errors.phoneNumber ? (
+											<Text className="text-red-600 text-sm leading-5">
+												{errors.phoneNumber}
+											</Text>
+										) : null}
+									</Stack>
+
+									<Textarea
 										classNames={{
 											input:
-												"h-[44px] rounded-[8px] border-[#D5DDE8] text-base text-[#0E1628]",
+												"h-[134px] rounded-[8px] border-[#D5DDE8] px-4 py-3 text-sm text-[#0E1628] md:text-base",
 											label:
 												"mb-2 font-medium text-base leading-6 text-[#344054]",
 										}}
-										label="Last name"
-										placeholder="Last name"
+										error={errors.message}
+										label="Message"
+										minRows={6}
+										onChange={(event) =>
+											setFieldValue("message", event.currentTarget.value)
+										}
+										placeholder="Leave us a message..."
+										value={values.message}
 									/>
-								</SimpleGrid>
 
-								<TextInput
-									classNames={{
-										input:
-											"h-[44px] rounded-[8px] border-[#D5DDE8] text-sm text-[#0E1628] md:text-base",
-										label:
-											"mb-2 font-medium text-base leading-6 text-[#344054]",
-									}}
-									label="Email"
-									placeholder="you@company.com"
-									type="email"
-								/>
+									<Checkbox
+										checked={values.agreeToPrivacy}
+										classNames={{
+											body: "items-center",
+											input: "rounded-md border-[#D0D5DD]",
+											label:
+												"text-sm leading-6 text-[#667085] md:text-base md:leading-7",
+										}}
+										error={errors.agreeToPrivacy}
+										label={
+											<>
+												You agree to our friendly{" "}
+												<Link className="underline" href={routes.privacy}>
+													privacy policy
+												</Link>
+												.
+											</>
+										}
+										onChange={(event) =>
+											setFieldValue(
+												"agreeToPrivacy",
+												event.currentTarget.checked,
+											)
+										}
+									/>
 
-								<TextInput
-									classNames={{
-										input:
-											"h-[44px] rounded-[8px] border-[#D5DDE8] text-sm text-[#0E1628] md:text-base",
-										label:
-											"mb-2 font-medium text-base leading-6 text-[#344054]",
-									}}
-									label="Phone number"
-									placeholder="+234 814 910 6125"
-									type="tel"
-								/>
+									{submitState ? (
+										<Alert
+											color={submitState.type === "success" ? "green" : "red"}
+											icon={
+												submitState.type === "success" ? (
+													<CheckCircle2 size={18} />
+												) : (
+													<AlertCircle size={18} />
+												)
+											}
+											radius="md"
+										>
+											{submitState.message}
+										</Alert>
+									) : null}
 
-								<Textarea
-									classNames={{
-										input:
-											"h-[134px] rounded-[8px] border-[#D5DDE8] px-4 py-3 text-sm text-[#0E1628] md:text-base",
-										label:
-											"mb-2 font-medium text-base leading-6 text-[#344054]",
-									}}
-									label="Message"
-									minRows={6}
-									placeholder="Leave us a message..."
-								/>
-
-								<Checkbox
-									classNames={{
-										body: "items-center",
-										input: "rounded-md border-[#D0D5DD]",
-										label:
-											"text-sm leading-6 text-[#667085] md:text-base md:leading-7",
-									}}
-									label={
-										<>
-											You agree to our friendly{" "}
-											<Link className="underline" href={routes.privacy}>
-												privacy policy
-											</Link>
-											.
-										</>
-									}
-								/>
-
-								<Button className="mt-2 h-14 rounded-[999px] bg-[#3455FF] font-medium text-base text-white leading-5 md:h-[60px] md:text-lg">
-									Send message
-								</Button>
-							</Stack>
+									<Button
+										className="mt-2 h-14 rounded-[999px] bg-[#3455FF] font-medium text-base text-white leading-5 md:h-[60px] md:text-lg"
+										loading={isSubmitting}
+										type="submit"
+									>
+										Send message
+									</Button>
+								</Stack>
+							</Box>
 						</Paper>
 					</SimpleGrid>
 				</PageWrapper>

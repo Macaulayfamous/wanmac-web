@@ -1,4 +1,5 @@
 @import "tailwind-preset-mantine";
+@import "react-phone-input-2/lib/style.css";
 
 html {
 	scroll-behavior: smooth;
@@ -50,5 +51,46 @@ html {
 @layer components {
 	.error {
 		@apply border border-red-500;
+	}
+}
+
+.phone-input-container {
+	width: 100%;
+}
+
+.phone-input-container .form-control {
+	width: 100% !important;
+	height: 44px !important;
+	border: 1px solid #d5dde8 !important;
+	border-radius: 8px !important;
+	padding-left: 52px !important;
+	font-size: 14px !important;
+	color: #0e1628 !important;
+	box-shadow: none !important;
+}
+
+.phone-input-container .form-control:focus {
+	border-color: #3455ff !important;
+	box-shadow: 0 0 0 1px #3455ff !important;
+}
+
+.phone-input-container .flag-dropdown {
+	border: 1px solid #d5dde8 !important;
+	border-right: 0 !important;
+	border-radius: 8px 0 0 8px !important;
+	background: white !important;
+}
+
+.phone-input-container .selected-flag {
+	border-radius: 8px 0 0 8px !important;
+}
+
+.phone-input-container .country-list {
+	border-radius: 8px !important;
+}
+
+@media (min-width: 48em) {
+	.phone-input-container .form-control {
+		font-size: 16px !important;
 	}
 }
