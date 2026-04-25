@@ -56,7 +56,7 @@ const PageClient = () => {
 					component="header"
 				>
 					<PageWrapper>
-						<SimpleGrid className="grid-cols-1 items-center gap-10 md:grid-cols-2">
+						<SimpleGrid className="grid-cols-1 items-center gap-10 md:grid-cols-[45%_55%]">
 							<motion.div
 								animate={reduceMotion ? undefined : "animate"}
 								initial={reduceMotion ? undefined : "initial"}
