@@ -134,11 +134,17 @@ const PageClient = () => {
 										variants={fadeUp}
 										{...(reduceMotion ? {} : buttonMotion)}
 									>
-										<Link href="">
+										{/* <Link href="">
 											<Button className="h-14 w-[170px] rounded-[96px] bg-white font-medium text-[#3455FF] text-base leading-[18px]">
 												Download app
 											</Button>
-										</Link>
+										</Link> */}
+										<Button
+											className="h-14 w-[170px] rounded-[96px] bg-white font-medium text-[#3455FF] text-base leading-[18px] opacity-90"
+											disabled
+										>
+											Coming soon
+										</Button>
 									</motion.div>
 								</Stack>
 							</motion.div>

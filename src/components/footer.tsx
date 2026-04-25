@@ -1,4 +1,4 @@
-import { Box, Group, Stack, Text } from "@mantine/core";
+import { Box, Button, Group, Stack, Text } from "@mantine/core";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/public/logo.svg";
@@ -63,7 +63,7 @@ const Footer = () => {
 						</Group>
 
 						<Group className="gap-4">
-							<Link href={routes.appStore}>
+							{/* <Link href={routes.appStore}>
 								<Group className="h-10 w-[135px] gap-x-1.5 rounded-[7px] border border-[#A6A6A6] bg-[#101010] pl-[9px] shadow-[0_1px_2px_rgba(0,0,0,0.2)]">
 									<AppleLogo />
 									<Stack className="text-white" gap={0}>
@@ -85,7 +85,21 @@ const Footer = () => {
 										<Text className="font-medium text-sm">Google Play</Text>
 									</Stack>
 								</Group>
-							</Link>
+							</Link> */}
+							<Button
+								className="h-10 rounded-[7px] bg-[#101010] px-4 font-medium text-white"
+								disabled
+								leftSection={<AppleLogo />}
+							>
+								Coming soon on App Store
+							</Button>
+							<Button
+								className="h-10 rounded-[7px] border border-[#A6A6A6] bg-transparent px-4 font-medium text-[#101010]"
+								disabled
+								leftSection={<GooglePlayStore />}
+							>
+								Coming soon on Play Store
+							</Button>
 						</Group>
 					</Stack>
 
