@@ -52,6 +52,18 @@ const contactCards = [
 	},
 ];
 
+const businessDetails = [
+	{
+		label: "Business address",
+		value:
+			"1, JOVEE CLOSE OF SAPEL ROAD, EDO STATE, BENIN CITY, EDO STATE, NIGERIA",
+	},
+	{
+		label: "Opening hours",
+		value: "24/7",
+	},
+];
+
 type FormValues = {
 	agreeToPrivacy: boolean;
 	email: string;
@@ -391,6 +403,25 @@ const ContactPageClient = () => {
 												</Text>
 											</Text>
 										</Link>
+									</Stack>
+								</Paper>
+							))}
+						</SimpleGrid>
+
+						<SimpleGrid className="grid-cols-1 gap-6 md:grid-cols-2">
+							{businessDetails.map((detail) => (
+								<Paper
+									className="rounded-[28px] border border-[#E7ECF3] bg-[#F8FAFF] px-6 py-8 shadow-[0_10px_30px_rgba(8,8,8,0.04)] md:px-8"
+									key={detail.label}
+									radius={28}
+								>
+									<Stack className="gap-y-3">
+										<Text className="font-medium text-[#3455FF] text-sm uppercase tracking-[0.08em]">
+											{detail.label}
+										</Text>
+										<Text className="font-medium text-[#0E1628] text-xl leading-8 md:text-2xl">
+											{detail.value}
+										</Text>
 									</Stack>
 								</Paper>
 							))}
