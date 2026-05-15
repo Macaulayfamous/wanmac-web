@@ -137,14 +137,7 @@ const PageClient = () => {
 					</PageWrapper>
 				</Box>
 
-				<motion.section
-					className="bg-white pt-20 pb-12 md:pt-[158px] md:pb-[62px]"
-					initial={reduceMotion ? undefined : "initial"}
-					transition={{ duration: 0.6, ease: easeOutExpo }}
-					variants={fadeUp}
-					viewport={{ once: true, amount: 0.25 }}
-					whileInView={reduceMotion ? undefined : "whileInView"}
-				>
+				<motion.section className="bg-white pt-20 pb-12 md:pt-[158px] md:pb-[62px]">
 					<PageWrapper>
 						<SimpleGrid className="grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-x-[54px]">
 							<motion.div
@@ -184,18 +177,15 @@ const PageClient = () => {
 					</PageWrapper>
 				</motion.section>
 
-				<motion.section
-					className="bg-white py-24"
-					initial={reduceMotion ? undefined : "initial"}
-					transition={{ duration: 0.6, ease: easeOutExpo }}
-					variants={scaleIn}
-					viewport={{ once: true, amount: 0.25 }}
-					whileInView={reduceMotion ? undefined : "whileInView"}
-				>
+				<motion.section className="bg-white py-24">
 					<PageWrapper>
 						<motion.div
+							initial={reduceMotion ? undefined : "initial"}
 							transition={springTransition}
+							variants={scaleIn}
+							viewport={{ once: true, amount: 0.25 }}
 							whileHover={reduceMotion ? undefined : { scale: 1.01 }}
+							whileInView={reduceMotion ? undefined : "whileInView"}
 						>
 							<Paper
 								className="bg-[#080808] px-6 py-12 md:px-[69px] md:py-24"
@@ -253,14 +243,7 @@ const PageClient = () => {
 					</PageWrapper>
 				</motion.section>
 
-				<motion.section
-					className="bg-white pb-16 md:pb-24"
-					initial={reduceMotion ? undefined : "initial"}
-					transition={{ duration: 0.6, ease: easeOutExpo }}
-					variants={fadeUp}
-					viewport={{ once: true, amount: 0.25 }}
-					whileInView={reduceMotion ? undefined : "whileInView"}
-				>
+				<motion.section className="bg-white pb-16 md:pb-24">
 					<PageWrapper>
 						<Stack className="gap-y-12">
 							<Title className="max-w-[680px] font-medium text-[#0E1628] text-[32px] leading-[42px] md:text-[44px] md:leading-[54px]">
@@ -416,11 +399,6 @@ const PageClient = () => {
 				<motion.section
 					className="scroll-mt-20 bg-white pb-16 md:pb-[96px]"
 					id="faq"
-					initial={reduceMotion ? undefined : "initial"}
-					transition={{ duration: 0.6, ease: easeOutExpo }}
-					variants={fadeUp}
-					viewport={{ once: true, amount: 0.25 }}
-					whileInView={reduceMotion ? undefined : "whileInView"}
 				>
 					<PageWrapper>
 						<SimpleGrid className="grid-cols-1 gap-10 md:grid-cols-2 md:gap-x-16">
@@ -520,14 +498,7 @@ const PageClient = () => {
 					</PageWrapper>
 				</motion.section>
 
-				<motion.section
-					className="bg-white pb-16 md:pb-[82px]"
-					initial={reduceMotion ? undefined : "initial"}
-					transition={{ duration: 0.6, ease: easeOutExpo }}
-					variants={fadeUp}
-					viewport={{ once: true, amount: 0.25 }}
-					whileInView={reduceMotion ? undefined : "whileInView"}
-				>
+				<motion.section className="bg-white pb-16 md:pb-[82px]">
 					<PageWrapper>
 						<motion.div
 							animate={reduceMotion ? undefined : "animate"}
