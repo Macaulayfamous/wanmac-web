@@ -34,8 +34,8 @@ export const footerLinks = [
 		href: routes.contact,
 	},
 	{
-		title: "FAQ",
-		href: routes.faq,
+		title: "Delete Account",
+		href: routes.deleteAccount,
 	},
 ];
 
