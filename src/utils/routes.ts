@@ -2,6 +2,7 @@ export const routes = {
 	home: "/",
 	about: "/#about",
 	faq: "/#faq",
+	deleteAccount: "/delete-account",
 	contact: "/contact",
 	appStore: "",
 	playStore: "",
