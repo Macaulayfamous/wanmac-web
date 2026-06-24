@@ -108,7 +108,7 @@ const Footer = () => {
 							<Text className="font-normal text-[#636362] text-base leading-7 -tracking-[0.16px] md:text-lg md:leading-[27px]">
 								Copyright © WanPadi |{" "}
 								<Link href={routes.privacy}>
-									Privacy Policy - Terms & condidtions
+									Privacy Policy - Terms & conditions
 								</Link>
 							</Text>
 						</Group>

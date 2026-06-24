@@ -1,6 +1,5 @@
 module.exports = {
-	// TODO: Add your own URL here
-	siteUrl: "",
+	siteUrl: "https://www.wanpadi.com",
 	generateRobotsTxt: true,
 	generateIndexSitemap: true,
 };
