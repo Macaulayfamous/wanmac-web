@@ -3,6 +3,8 @@ import PageWrapper from "@/components/page-wrapper";
 
 export const metadata = {
 	title: "Privacy Policy",
+	description:
+		"How WanPadi collects, uses, stores, and protects your personal information when you use our delivery app and website.",
 };
 
 const sections = [
