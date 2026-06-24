@@ -30,16 +30,16 @@ const contactCards = [
 		title: "Help & support",
 		description:
 			"Get help with bookings, rider tracking, payment issues, or delivery updates from our support team.",
-		cta: "hello@wanmac.ng",
-		href: "mailto:hello@wanmac.ng?subject=Hello Inquiry",
+		cta: "hello@wanpadi.com",
+		href: "mailto:hello@wanpadi.com?subject=Hello Inquiry",
 		icon: SupportIcon,
 	},
 	{
 		title: "Sales & enquiries",
 		description:
 			"Talk to us about business deliveries, bulk orders, and logistics support for your brand or company.",
-		cta: "sales@wanmac.ng",
-		href: "mailto:sales@wanmac.ng?subject=Sales Inquiry",
+		cta: "sales@wanpadi.com",
+		href: "mailto:sales@wanpadi.com?subject=Sales Inquiry",
 		icon: SalesIcon,
 	},
 	{
@@ -174,8 +174,8 @@ const ContactPageClient = () => {
 					phone: `+${values.phoneNumber}`,
 					phone_number: `+${values.phoneNumber}`,
 					reply_to: values.email,
-					title: "Wanmac Contact Form",
-					to_name: "Wanmac",
+					title: "WanPadi Contact Form",
+					to_name: "WanPadi",
 				},
 				{ publicKey },
 			);
