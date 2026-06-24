@@ -1,7 +1,7 @@
 import { Box, Button, Group, Stack, Text } from "@mantine/core";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "@/public/logo.svg";
+import logo from "@/public/logo.png";
 import { routes } from "@/utils/routes";
 import AppleLogo from "./icons/apple-logo";
 import FacebookIcon from "./icons/facebook-icon";
@@ -47,7 +47,7 @@ const Footer = () => {
 					<Stack className="gap-y-8 pb-10 md:gap-y-[30px] md:pr-[65px] md:pb-[69px]">
 						<Group className="flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
 							<Image
-								alt="wanmac logo"
+								alt="WanPadi logo"
 								className="h-auto w-[132px] md:w-auto"
 								src={logo}
 							/>
@@ -106,7 +106,7 @@ const Footer = () => {
 					<Group className="flex-col-reverse items-start gap-6 md:flex-row md:items-center md:justify-between">
 						<Group>
 							<Text className="font-normal text-[#636362] text-base leading-7 -tracking-[0.16px] md:text-lg md:leading-[27px]">
-								Copyright © Wanmac |{" "}
+								Copyright © WanPadi |{" "}
 								<Link href={routes.privacy}>
 									Privacy Policy - Terms & condidtions
 								</Link>

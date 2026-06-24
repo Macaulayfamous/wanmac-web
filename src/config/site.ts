@@ -1,5 +1,5 @@
 export const siteConfig = {
-	name: "Wanmac",
+	name: "WanPadi",
 	description: "",
 };
 
