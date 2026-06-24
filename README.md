@@ -1,4 +1,4 @@
-# Wanmac Web
+# WanPadi Web
 
 A modern web application built with [Next.js](https://nextjs.org), featuring a robust UI system with [Mantine](https://mantine.dev) and [Tailwind CSS](https://tailwindcss.com).
 

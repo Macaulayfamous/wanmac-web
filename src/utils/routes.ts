@@ -8,6 +8,5 @@ export const routes = {
 	playStore: "",
 	privacy: "/privacy",
 	facebook: "https://www.facebook.com/share/1EHkwwwnsE/?mibextid=wwXIfr",
-	instagram:
-		"https://www.instagram.com/wanmac_delivery?igsh=dG8xbzVob2d0Y3Ji&utm_source=qr",
+	instagram: "https://www.instagram.com/wanpadi_delivery",
 };

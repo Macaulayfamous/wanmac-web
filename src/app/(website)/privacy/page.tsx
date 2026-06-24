@@ -9,15 +9,15 @@ const sections = [
 	{
 		title: "What information do we collect?",
 		paragraphs: [
-			"Wanmac collects the information needed to create your account and complete deliveries through the mobile app. This may include your name, email address, phone number, pickup and drop-off addresses, order details, and any delivery instructions you choose to share.",
+			"WanPadi collects the information needed to create your account and complete deliveries through the mobile app. This may include your name, email address, phone number, pickup and drop-off addresses, order details, and any delivery instructions you choose to share.",
 			"When you use location-enabled features, we may receive precise or approximate device location to help you book deliveries, track riders in real time, estimate arrival times, and improve route accuracy. We may also collect device details, app usage data, and log information such as IP address, browser type, crash reports, and interaction history.",
-			"If you make payments through the app, billing and transaction details may be processed by our payment partners. Wanmac does not store full payment card details on its own servers unless clearly stated as part of a secure payment workflow.",
+			"If you make payments through the app, billing and transaction details may be processed by our payment partners. WanPadi does not store full payment card details on its own servers unless clearly stated as part of a secure payment workflow.",
 		],
 	},
 	{
 		title: "How do we use your information?",
 		paragraphs: [
-			"We use your information to provide and improve the Wanmac delivery service. This includes creating your account, confirming bookings, assigning riders, tracking deliveries, sending status updates, processing payments, handling refunds, and responding to customer support requests.",
+			"We use your information to provide and improve the WanPadi delivery service. This includes creating your account, confirming bookings, assigning riders, tracking deliveries, sending status updates, processing payments, handling refunds, and responding to customer support requests.",
 			"Your information may also be used to personalize your app experience, prevent fraud, maintain platform safety, monitor performance, and comply with legal obligations. Where permitted, we may send service messages, promotional offers, feature updates, and important policy notices.",
 			"We only use personal data where we have a valid business reason or legal basis to do so, and we aim to limit collection to what is relevant for operating a secure and reliable delivery platform.",
 		],
@@ -25,7 +25,7 @@ const sections = [
 	{
 		title: "Do we use cookies and other tracking technologies?",
 		paragraphs: [
-			"Yes. Wanmac may use cookies, mobile SDKs, pixels, and similar technologies to keep you signed in, remember preferences, measure app performance, and understand how users interact with our website and mobile app.",
+			"Yes. WanPadi may use cookies, mobile SDKs, pixels, and similar technologies to keep you signed in, remember preferences, measure app performance, and understand how users interact with our website and mobile app.",
 			"These technologies help us improve reliability, analyze traffic, troubleshoot issues, prevent abuse, and deliver more relevant communications. You can manage some tracking preferences through your device settings or browser controls, although disabling certain tools may affect how parts of the service work.",
 		],
 	},
@@ -53,7 +53,7 @@ const sections = [
 	{
 		title: "How can you contact us about this policy?",
 		paragraphs: [
-			"If you have questions about this Privacy Policy or how Wanmac handles personal information, contact our support team through the app or by using the contact details provided on our website. We will review your request and respond as soon as reasonably possible.",
+			"If you have questions about this Privacy Policy or how WanPadi handles personal information, contact our support team through the app or by using the contact details provided on our website. We will review your request and respond as soon as reasonably possible.",
 		],
 		listItems: [
 			"Questions about account information, delivery history, or updates to your profile can be submitted through customer support.",
@@ -76,7 +76,7 @@ const PrivacyPage = () => {
 							Privacy Policy
 						</Title>
 						<Text className="mx-auto max-w-[660px] font-normal text-[#666E82] text-base leading-[26px]">
-							Your privacy matters to Wanmac. This Privacy Policy explains how
+							Your privacy matters to WanPadi. This Privacy Policy explains how
 							we collect, use, store, and protect information when you use our
 							delivery mobile app, website, and related services.
 						</Text>
@@ -84,7 +84,7 @@ const PrivacyPage = () => {
 
 					<Stack className="gap-y-8">
 						<Text className="font-normal text-[#666E82] text-base leading-[28px]">
-							Wanmac is built to make booking, tracking, and receiving
+							WanPadi is built to make booking, tracking, and receiving
 							deliveries simple and reliable. To provide that service, we need
 							limited information about our customers, their orders, and how the
 							app is used. We are committed to handling that information
@@ -93,8 +93,8 @@ const PrivacyPage = () => {
 						<Text className="font-normal text-[#666E82] text-base leading-[28px]">
 							This page describes what information we collect, why we collect
 							it, how long we keep it, and the choices available to you. By
-							using Wanmac, you agree to the practices described in this policy,
-							subject to any rights you may have under applicable law.
+							using WanPadi, you agree to the practices described in this
+							policy, subject to any rights you may have under applicable law.
 						</Text>
 					</Stack>
 

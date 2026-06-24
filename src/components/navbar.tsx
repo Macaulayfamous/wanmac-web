@@ -12,8 +12,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { buttonMotion, fadeDown } from "@/lib/motion";
-import logo from "@/public/logo.svg";
-import transparentLogo from "@/public/logo-transparent.svg";
+import logo from "@/public/logo.png";
+import transparentLogo from "@/public/logo-white.png";
 import { cn } from "@/utils";
 import { routes } from "@/utils/routes";
 import PageWrapper from "./page-wrapper";
@@ -82,7 +82,7 @@ const Navbar = () => {
 						>
 							<Link href="/">
 								<Image
-									alt="wanmac logo"
+									alt="WanPadi logo"
 									className="h-auto w-[128px] md:w-auto"
 									src={isLightLogo ? transparentLogo : logo}
 								/>
@@ -165,7 +165,7 @@ const Navbar = () => {
 				>
 					<Stack className="gap-y-8">
 						<Image
-							alt="wanmac logo"
+							alt="WanPadi logo"
 							className="h-auto w-[128px]"
 							src={transparentLogo}
 						/>
