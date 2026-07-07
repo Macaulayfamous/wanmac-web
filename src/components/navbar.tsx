@@ -11,6 +11,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useStoreLink } from "@/hooks/use-store-link";
 import { buttonMotion, fadeDown } from "@/lib/motion";
 import logo from "@/public/logo.png";
 import transparentLogo from "@/public/logo-white.png";
@@ -57,6 +58,7 @@ const Navbar = () => {
 	const [opened, { close, toggle }] = useDisclosure(false);
 	const pathname = usePathname();
 	const reduceMotion = useReducedMotion();
+	const storeLink = useStoreLink();
 	const navbarTheme = navbarThemes[pathname] ?? {
 		backgroundClassName: "bg-white",
 		logo: "dark" as const,
@@ -108,7 +110,7 @@ const Navbar = () => {
 							initial={reduceMotion ? undefined : "initial"}
 							variants={fadeDown}
 						>
-							{/* <Link className="hidden sm:block" href={routes.appStore}>
+							<Link className="hidden sm:block" href={storeLink}>
 								<Button
 									className={cn(
 										"h-14 w-[170px] rounded-[96px] bg-[#3455FF] font-medium text-base text-white leading-[18px]",
@@ -117,8 +119,8 @@ const Navbar = () => {
 								>
 									Download app
 								</Button>
-							</Link> */}
-							<Button
+							</Link>
+							{/* <Button
 								className={cn(
 									"hidden h-14 w-[170px] rounded-[96px] bg-[#3455FF] font-medium text-base text-white leading-[18px] opacity-90 sm:block",
 									isLightLogo && "bg-white text-[#3455FF]",
@@ -126,7 +128,7 @@ const Navbar = () => {
 								disabled
 							>
 								Coming soon
-							</Button>
+							</Button> */}
 						</motion.div>
 
 						<motion.div
@@ -179,17 +181,11 @@ const Navbar = () => {
 						</Stack>
 
 						<motion.div {...(reduceMotion ? {} : buttonMotion)}>
-							{/* <Link href="" onClick={close}>
+							<Link href={storeLink} onClick={close}>
 								<Button className="h-14 w-full rounded-[96px] bg-white font-medium text-[#3455FF] text-base leading-[18px]">
 									Download app
 								</Button>
-							</Link> */}
-							<Button
-								className="h-14 w-full rounded-[96px] bg-white font-medium text-[#3455FF] text-base leading-[18px] opacity-90"
-								disabled
-							>
-								Coming soon
-							</Button>
+							</Link>
 						</motion.div>
 					</Stack>
 				</Drawer>

@@ -56,7 +56,7 @@ const businessDetails = [
 	{
 		label: "Business address",
 		value:
-			"1, JOVEE CLOSE OF SAPEL ROAD, EDO STATE, BENIN CITY, EDO STATE, NIGERIA",
+			"1, JOVEE CLOSE, OFF OWIE, OFF SAPELE ROAD, BENIN CITY, EDO STATE, NIGERIA",
 	},
 	{
 		label: "Opening hours",

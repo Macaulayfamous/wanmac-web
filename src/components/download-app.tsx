@@ -8,6 +8,7 @@ import {
 	useReducedMotion,
 } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 import {
 	buttonMotion,
 	easeOutExpo,
@@ -16,6 +17,7 @@ import {
 	staggerContainer,
 } from "@/lib/motion";
 import downloadImage from "@/public/download_image.png";
+import { routes } from "@/utils/routes";
 import AppleLogo from "./icons/apple-logo";
 import GooglePlayStore from "./icons/google-play-store";
 
@@ -75,7 +77,7 @@ const DownloadApp = () => {
 								</motion.ul>
 								<motion.div variants={fadeUp}>
 									<Group className="mt-8 flex-col gap-4 md:mt-10 md:flex-row">
-										{/* <motion.div
+										<motion.div
 											className="w-full md:w-auto"
 											{...(reduceMotion ? {} : buttonMotion)}
 										>
@@ -103,8 +105,8 @@ const DownloadApp = () => {
 													Download From App Store
 												</Button>
 											</Link>
-										</motion.div> */}
-										<motion.div
+										</motion.div>
+										{/* <motion.div
 											className="w-full md:w-auto"
 											{...(reduceMotion ? {} : buttonMotion)}
 										>
@@ -127,7 +129,7 @@ const DownloadApp = () => {
 											>
 												Coming soon on App Store
 											</Button>
-										</motion.div>
+										</motion.div> */}
 									</Group>
 								</motion.div>
 							</Box>
