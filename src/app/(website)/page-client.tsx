@@ -26,6 +26,7 @@ import DownloadApp from "@/components/download-app";
 import ArrowTop from "@/components/icons/arrow-top";
 import VehicleApproved from "@/components/icons/vehicle-approved";
 import PageWrapper from "@/components/page-wrapper";
+import { useStoreLink } from "@/hooks/use-store-link";
 import {
 	buttonMotion,
 	easeOutExpo,
@@ -47,6 +48,7 @@ const PageClient = () => {
 	const [activeStep, setActiveStep] = useState(howItWorksSteps[0]?.id);
 	const [activeFaq, setActiveFaq] = useState(faqs[0]?.question);
 	const reduceMotion = useReducedMotion();
+	const storeLink = useStoreLink();
 
 	return (
 		<LazyMotion features={domAnimation}>
@@ -83,17 +85,17 @@ const PageClient = () => {
 										variants={fadeUp}
 										{...(reduceMotion ? {} : buttonMotion)}
 									>
-										{/* <Link href="">
+										<Link href={storeLink}>
 											<Button className="h-14 w-[170px] rounded-[96px] bg-white font-medium text-[#3455FF] text-base leading-[18px]">
 												Download app
 											</Button>
-										</Link> */}
-										<Button
+										</Link>
+										{/* <Button
 											className="h-14 w-[170px] rounded-[96px] bg-white font-medium text-[#3455FF] text-base leading-[18px] opacity-90"
 											disabled
 										>
 											Coming soon
-										</Button>
+										</Button> */}
 									</motion.div>
 								</Stack>
 							</motion.div>

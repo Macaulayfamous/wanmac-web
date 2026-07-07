@@ -5,6 +5,7 @@ import "@/styles/globals.css";
 import { ColorSchemeScript, mantineHtmlProps } from "@mantine/core";
 
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 
 export const metadata: Metadata = {
 	metadataBase: new URL(siteConfig.url),
@@ -37,16 +38,19 @@ export const metadata: Metadata = {
 	icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
 	children,
 }: Readonly<{ children: React.ReactNode }>) {
+	const headersList = await headers();
+	const userAgent = headersList.get("user-agent") ?? "";
+
 	return (
 		<html className={`${satoshi.variable}`} lang="en" {...mantineHtmlProps}>
 			<head>
 				<ColorSchemeScript />
 			</head>
 			<body>
-				<Provider>{children}</Provider>
+				<Provider userAgent={userAgent}>{children}</Provider>
 			</body>
 		</html>
 	);
