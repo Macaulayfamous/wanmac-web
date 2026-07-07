@@ -54,7 +54,7 @@ const PageClient = () => {
 		<LazyMotion features={domAnimation}>
 			<Box component="main">
 				<Box
-					className="min-h-[calc(100vh-104px)] bg-[#142FBB] pt-14 md:pt-[91px]"
+					className="min-h-[calc(100vh-104px)] bg-[#142FBB] pt-14 md:pt-2"
 					component="header"
 				>
 					<PageWrapper>
